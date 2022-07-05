@@ -1,0 +1,17 @@
+{
+  "name": "sports-day",
+  "version": "1.0.0",
+  "description": "SPCS Sports Day Portal 2022",
+  "author": "Henry Bersey",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build:be": "yarn --cwd backend build ",
+    "dev:be": "yarn --cwd backend develop ",
+    "dev:fe": "yarn --cwd frontend dev",
+    "dev": "concurrently \"yarn dev:be\" \"yarn dev:fe\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1"
+  }
+}

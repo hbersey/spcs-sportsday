@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "house_informations",
+  "info": {
+    "singularName": "house-information",
+    "pluralName": "house-informations",
+    "displayName": "House Information",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "boyce": {
+      "type": "richtext"
+    },
+    "de_la_mare": {
+      "type": "richtext"
+    },
+    "groves": {
+      "type": "richtext"
+    },
+    "stainer": {
+      "type": "richtext"
+    }
+  }
+}

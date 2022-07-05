@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pupils",
+  "info": {
+    "singularName": "pupil",
+    "pluralName": "pupils",
+    "displayName": "Pupil"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "First_Names": {
+      "type": "string"
+    },
+    "Last_Name": {
+      "type": "string"
+    },
+    "Year": {
+      "type": "integer",
+      "min": 0,
+      "max": 8
+    },
+    "Form_Suffix": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2
+    }
+  }
+}

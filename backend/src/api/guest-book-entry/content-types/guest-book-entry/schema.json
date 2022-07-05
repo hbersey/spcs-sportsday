@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guest_book_entries",
+  "info": {
+    "singularName": "guest-book-entry",
+    "pluralName": "guest-book-entries",
+    "displayName": "Guest Book Entry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

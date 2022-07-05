@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "houses",
+  "info": {
+    "singularName": "house",
+    "pluralName": "houses",
+    "displayName": "House",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "colour": {
+      "type": "string",
+      "required": true,
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    },
+    "score": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::score.score",
+      "inversedBy": "house"
+    }
+  }
+}

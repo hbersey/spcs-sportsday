@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "results",
+  "info": {
+    "singularName": "result",
+    "pluralName": "results",
+    "displayName": "Result",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event": {
+      "type": "enumeration",
+      "enum": [
+        "Cricket Ball Throw / Shot Putt",
+        "Javelin",
+        "Long Jump",
+        "Obstacle Race",
+        "Shot Putt",
+        "Speed Jump",
+        "Target Throw",
+        "Tug of War"
+      ],
+      "required": true
+    },
+    "place_1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house.house"
+    },
+    "place_2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house.house"
+    },
+    "place_3": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house.house"
+    },
+    "place_4": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house.house"
+    },
+    "year": {
+      "type": "enumeration",
+      "enum": [
+        "Reception",
+        "Year 1",
+        "Year 2",
+        "Year 3",
+        "Year 4",
+        "Year 5",
+        "Year 6",
+        "Year 7",
+        "Year 8"
+      ],
+      "required": true
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "place_1_pupil": {
+      "type": "string"
+    },
+    "place_2_pupil": {
+      "type": "string"
+    },
+    "place_3_pupil": {
+      "type": "string"
+    },
+    "place_4_pupil": {
+      "type": "string"
+    }
+  }
+}
