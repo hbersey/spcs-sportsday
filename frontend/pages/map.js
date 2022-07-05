@@ -22,8 +22,18 @@ const Map = () => {
     return <Layout loading={imageUrl == undefined} meta={{ title: "Map - Sports Day" }}>
         <Box style={{ flex: 1, display: "flex" }}>
             <Box style={{ margin: "auto" }}>
-                <a href={imageUrl}  target="_blank" rel="noreferrer">
-                    <Image src={imageUrl} style={{ height: "100%" }} />
+                <a href={imageUrl} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
+                    <Image
+                        src={imageUrl}
+                        style={{ height: "100%" }}
+                        styles={(theme) => ({
+                            caption: {
+                                color: theme.colors.gray[1],
+                            }
+                        })}
+                        alt="Map"
+                        caption="Click to expand."
+                    />
 
                 </a>
             </Box>
