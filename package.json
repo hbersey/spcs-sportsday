@@ -6,10 +6,14 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build:be": "yarn --cwd backend build ",
-    "dev:be": "yarn --cwd backend develop ",
+    "build:be": "yarn --cwd backend build",
+    "build:fe": "yarn --cwd frontend build",
+    "dev:be": "yarn --cwd backend develop",
     "dev:fe": "yarn --cwd frontend dev",
-    "dev": "concurrently \"yarn dev:be\" \"yarn dev:fe\""
+    "dev": "concurrently \"yarn dev:be\" \"yarn dev:fe\"",
+    "start:be": "yarn --cwd backend start",
+    "start:fe": "yarn --cwd frontend start",
+    "start": "concurrently \"yarn start:be\" \"yarn start:fe\""
   },
   "devDependencies": {
     "concurrently": "^7.2.1"
