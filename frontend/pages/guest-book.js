@@ -38,7 +38,7 @@ const Map = () => {
 
     useEffect(() => {
         setSendBtnHeight(textAreaRef.current?.clientHeight || "auto")
-    }, [textAreaRef.current, textAreaRef.current?.clientHeight])
+    }, [textAreaRef.current?.clientHeight])
 
     useEffect(() => {
         (async () => {
@@ -63,7 +63,7 @@ const Map = () => {
                                 backgroundColor: "transparent",
                                 color: "white",
                                 "&:focus": {
-                                    borderColor:"#a39161"
+                                    borderColor: "#a39161"
                                 }
                             }
                         }}
@@ -78,8 +78,9 @@ const Map = () => {
             </div>
 
             <Stack spacing="xs">
-                {messages.map(msg =>
+                {messages.map((msg, i) =>
                     <Blockquote
+                        key={i}
                         styles={{
                             body: { color: 'white' },
                             icon: { color: 'white' },

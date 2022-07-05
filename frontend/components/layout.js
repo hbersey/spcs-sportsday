@@ -6,7 +6,7 @@ import Head from "next/head";
 // backgroundColor: "#c81d4a"
 
 export const DesignedBy = (props) => <Group position="right" {...props} >
-    <Text>Site designed and developed by <a href="https://www.linkedin.com/in/hbersey/" target="_BLANK" style={{ color: "white", marginRight: 8 }}>Henry Bersey</a></Text>
+    <Text>Site designed and developed by <a href="https://www.linkedin.com/in/hbersey/" target="_blank" rel="noreferrer" style={{ color: "white", marginRight: 8 }}>Henry Bersey</a></Text>
 </Group>;
 
 const Layout = ({ children, loading = false, meta = { title: "Sports Day" }, hideDesignedBy = false }) => {

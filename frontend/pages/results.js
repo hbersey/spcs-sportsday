@@ -18,7 +18,7 @@ const ResultCard = ({ result }) => <Card shadow="sm" p="lg" style={{ height: "fi
     <Text weight={500} size="sm" color="gray">{result.year} - {result.sex == "male" ? "Boys" : "Girls"}</Text>
     <List type="ordered" size="sm">
         {result.results.map(({ house }) =>
-            <List.Item>
+            <List.Item key={house.name}>
                 <span style={{ color: house.colour }}>
                     {house.name}
                 </span>
@@ -105,7 +105,7 @@ const Results = () => {
                             </XAxis>
                             <YAxis stroke="white" />
                             <Bar dataKey="score" fill="#ffffff">
-                                {scores.map(({ house }) => <Cell fill={fills[sortedScores.indexOf(house)]} />)}
+                                {scores.map(({ house }) => <Cell key={house} fill={fills[sortedScores.indexOf(house)]} />)}
                             </Bar>
                         </BarChart>
                     </ResponsiveContainer>
@@ -124,7 +124,7 @@ const Results = () => {
         ]}
             spacing="xs"
             id="results" >
-            {results.map((result) => <ResultCard {...{ result }} />)}
+            {results.map((result, i) => <ResultCard key={i} {...{ result }} />)}
         </SimpleGrid>}
 
         <DesignedBy />

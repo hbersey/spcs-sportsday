@@ -66,7 +66,7 @@ const Home = () => {
         }}>Breaking News</Text>
 
         <Marquee style={{ backgroundColor: "white", width: "100%", top: "50%", height: "50%", transform: "translateY(-50%)", position: "absolute" }}>
-          {news.map(s => <div style={{ height: "100%", flex: 1, display: "flex", flexDirection: "column" }}>
+          {news.map((s, i) => <div key={i} style={{ height: "100%", flex: 1, display: "flex", flexDirection: "column" }}>
             <Text style={{ color: "black", paddingRight: 128, whiteSpace: "nowrap", marginTop: "auto", marginBottom: "auto" }}>{s}</Text>
           </div>)}
         </Marquee>

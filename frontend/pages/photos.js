@@ -37,7 +37,7 @@ const Photos = () => {
             ]}
                 spacing="xs">
                 {photos.slice(PHOTOS_PER_PAGE * (page - 1), PHOTOS_PER_PAGE * page).map(url =>
-                    <LazyLoad>
+                    <LazyLoad key={url}>
                         <Image src={url} imageProps={{ loading: "lazy" }} fit="contain" style={{ paddingBottom: 20 }} />
                     </LazyLoad>
                 )}
