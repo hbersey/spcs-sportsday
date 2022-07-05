@@ -19,7 +19,7 @@ const Quiz = () => {
     return <Layout loading={!questions} meta={{ title: "Lunchtime Quiz - Sports Day" }}>
         {questions &&
             <>
-                <Text align="center">Click on a question to view the answer!</Text>
+                <Text align="center">Click on a question to reveal the answer!</Text>
                 <Accordion styles={{
                     label: {
                         color: "white"
