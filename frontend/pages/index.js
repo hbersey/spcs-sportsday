@@ -53,17 +53,25 @@ const Home = () => {
 
 
       <Stack style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "10%", backgroundColor: "#011841" }}>
-        <DesignedBy style={{ top: 0, transform: "translateY(-100%)", lineHeight: "0" }} />
+        <DesignedBy sx={(theme) => ({
+          [`@media (max-width: ${theme.breakpoints.xs}px)`]: {
+            transform: "translateY(-200%)"
+          },
+          top: 0, transform: "translateY(-100%)", lineHeight: "0"
+        })} />
 
-        <Text size="xl" style={{
+        <Text size="xl" sx={(theme) => ({
           position: "absolute",
           top: 0,
           transform: "translateY(-50%)",
           left: 48,
+          [`@media (max-width: ${theme.breakpoints.xs}px)`]: {
+            left: 8
+          },
           backgroundColor: "#a39161",
           paddingLeft: 12,
           paddingRight: 12,
-        }}>Breaking News</Text>
+        })}>Breaking News</Text>
 
         <Marquee style={{ backgroundColor: "white", width: "100%", top: "50%", height: "50%", transform: "translateY(-50%)", position: "absolute" }}>
           {news.map((s, i) => <div key={i} style={{ height: "100%", flex: 1, display: "flex", flexDirection: "column" }}>
