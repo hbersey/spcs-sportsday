@@ -21,12 +21,6 @@
       "type": "string",
       "required": true,
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
-    },
-    "score": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::score.score",
-      "inversedBy": "house"
     }
   }
 }

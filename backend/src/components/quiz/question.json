@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_quiz_questions",
+  "info": {
+    "displayName": "Question",
+    "icon": "brain"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer_short": {
+      "type": "string",
+      "required": true
+    },
+    "answer_long": {
+      "type": "text"
+    }
+  }
+}

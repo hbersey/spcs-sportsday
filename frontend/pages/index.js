@@ -46,7 +46,7 @@ const Home = () => {
         <MenuItem icon={ChartBar} title="Results" href="/results" />
         <MenuItem icon={Photo} title="Photos" href="/photos" />
         <MenuItem icon={HomeIcon} title="House Information" href="/houses" />
-        <MenuItem icon={QuestionMark} title="Lunchtime Quiz" />
+        <MenuItem icon={QuestionMark} title="Lunchtime Quiz" href="/quiz" />
         <MenuItem icon={BrandTwitter} title="Twitter" href="/twitter" />
         <MenuItem icon={Book} title="Guest Book" href="/guest-book" />
       </SimpleGrid>
