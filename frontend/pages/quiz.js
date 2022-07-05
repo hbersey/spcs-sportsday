@@ -37,7 +37,7 @@ const Quiz = () => {
                     }
                 }}>
                     {questions.map((q, i) =>
-                        <Accordion.Item label={`${i + 1}) ${q.question}`}>
+                        <Accordion.Item label={`${i + 1}) ${q.question}`} key={i}>
                             <Text weight={500}>{q.answer_short}</Text>
                             {
                                 q.answer_long && <Text size="sm">{q.answer_long}</Text>
