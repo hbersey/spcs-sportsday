@@ -12,7 +12,7 @@
     "dev:fe": "yarn --cwd frontend dev",
     "dev": "concurrently \"yarn dev:be\" \"yarn dev:fe\"",
     "start:be": "yarn --cwd backend start",
-    "start:fe": "yarn --cwd frontend start -p 80",
+    "start:fe": "yarn --cwd frontend start",
     "start": "concurrently \"yarn start:be\" \"yarn start:fe\""
   },
   "devDependencies": {
