@@ -15,12 +15,17 @@ const fills = [
 
 const ResultCard = ({ result }) => <Card shadow="sm" p="lg" style={{ height: "fit-content" }}>
     <Text weight={500}>{result.name}</Text>
-    <Text weight={500} size="sm" color="gray">{result.year} - {result.sex == "male" ? "Boys" : "Girls"}</Text>
+    <Text weight={500} size="sm" color="gray">{result.year}
+        {result.sex && <>
+            {" - "}
+            {result.sex == "male" ? "Boys" : "Girls"}
+        </>}
+    </Text>
     <List type="ordered" size="sm">
-        {result.results.map(({ house }) =>
+        {result.results.map(({ pupil, house }) =>
             <List.Item key={house.name}>
                 <span style={{ color: house.colour }}>
-                    {house.name}
+                    {pupil || house.name}
                 </span>
             </List.Item>
         )}
@@ -55,6 +60,7 @@ const Results = () => {
 
             let _scores = Object.entries(scoresData).map(([house, score]) => ({ house, score }));
 
+            console.log(_scores);
 
             setScores(_scores);
 
@@ -75,7 +81,9 @@ const Results = () => {
                     if (el.attributes[`place_${i + 1}`] == null || el.attributes[`place_${i + 1}`].data == null)
                         break;
 
+
                     obj.results.push({
+                        pupil: el.attributes[`place_${i + 1}_pupil`] ?? undefined,
                         house: {
                             name: el.attributes[`place_${i + 1}`].data.attributes.Name,
                             colour: el.attributes[`place_${i + 1}`].data.attributes.colour
@@ -83,6 +91,8 @@ const Results = () => {
                     })
 
                 }
+                console.log(obj.results);
+
 
                 return obj;
             })
