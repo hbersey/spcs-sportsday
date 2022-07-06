@@ -1,7 +1,7 @@
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Label, Cell } from "recharts";
 import { Box, Card, List, SimpleGrid, Text, Button, Stack, Group } from "@mantine/core";
 import Layout, { DesignedBy } from "../components/layout";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const API_HOSTNAME = process.env.NEXT_PUBLIC_API_HOSTNAME
 
@@ -58,7 +58,7 @@ const Results = () => {
             const scoresRes = await fetch(`${API_HOSTNAME}/api/results/totals`);
             let scoresData = (await scoresRes.json());
 
-            let _scores = Object.entries(scoresData).map(([house, score]) => ({ house, score }));
+            let _scores = Object.entries(scoresData).map(([house, score]) => ({ house, score })).reverse();
 
             console.log(_scores);
 

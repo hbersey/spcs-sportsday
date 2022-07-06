@@ -25,16 +25,7 @@ const Home = () => {
   }, [])
 
   const [news, setNews] = useState([
-    "He was the only member of the club who didn't like plum pudding.",
-    "I am never at home on Sundays.",
-    "It was obvious she was hot, sweaty, and tired.",
-    "I always dreamed about being stranded on a desert island until it actually happened.",
-    "I checked to make sure that he was still alive.",
-    "My dentist tells me that chewing bricks is very bad for your teeth.",
-    "As he entered the church he could hear the soft voice of someone whispering into a cell phone.",
-    "It's not possible to convince a monkey to give you a banana by promising it infinite bananas when they die.",
-    "We have a lot of rain in June.",
-    "I know many children ask for a pony, but I wanted a bicycle with rockets strapped to it."
+    "We're having some techincal issues now but we hope you have a great sports day!",
   ]);
 
   return <Layout hideDesignedBy>
