@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import { Stack, Image, SimpleGrid, Pagination } from "@mantine/core"
+import { Stack, Image, SimpleGrid, Pagination, Group } from "@mantine/core"
 import { useEffect, useState } from "react";
 import { useListState } from "@mantine/hooks"
 import LazyLoad from "react-lazyload";
@@ -24,11 +24,24 @@ const Photos = () => {
     }, []);
 
 
+    const MyPagination = () => <Group position="center">
+        <Pagination total={Math.ceil(photos.length / PHOTOS_PER_PAGE)} page={page} onChange={setPage} styles={{
+            item: {
+                backgroundColor: "#a39161",
+                color: "white",
+                border: "none"
+            },
+            active: {
+                backgroundColor: "#011841",
+                border: "1px solid white"
+            }
+        }} />
+    </Group>
+
 
     return <Layout meta={{ title: "Photos - Sports Day" }} loading={!photos.length}>
         <Stack style={{ height: "100%" }}>
-
-            <Pagination total={Math.ceil(photos.length / PHOTOS_PER_PAGE)} page={page} onChange={setPage} />
+            <MyPagination />
 
             <SimpleGrid breakpoints={[
                 { minWidth: 'xs', cols: 1 },
@@ -42,6 +55,8 @@ const Photos = () => {
                     </LazyLoad>
                 )}
             </SimpleGrid>
+
+            <MyPagination />
 
         </Stack>
     </Layout >
