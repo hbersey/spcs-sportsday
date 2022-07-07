@@ -6,25 +6,27 @@ const API_HOSTNAME = process.env.NEXT_PUBLIC_API_HOSTNAME;
 
 const Map = () => {
 
-    const [imageUrl, setImageUrl] = useState();
+    const [imageUrls, setImageUrls] = useState();
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${API_HOSTNAME}/api/map?populate=image`);
+            const res = await fetch(`${API_HOSTNAME}/api/maps?populate=image`);
             const { data } = await res.json();
 
-            const url = `${API_HOSTNAME}${data.attributes.image.data.attributes.url}`;
-            setImageUrl(url);
+            const formattedData = data.map(
+                el => `${API_HOSTNAME}${el.attributes.image.data.attributes.url}`
+            );
 
+            setImageUrls(formattedData);
         })();
     }, []);
 
-    return <Layout loading={imageUrl == undefined} meta={{ title: "Map - Sports Day" }}>
-        <Box style={{ flex: 1, display: "flex" }}>
+    return <Layout loading={imageUrls == undefined} meta={{ title: "Map - Sports Day" }}>
+        {imageUrls && <Box style={{ flex: 1, display: "flex" }}>
             <Box style={{ margin: "auto" }}>
-                <a href={imageUrl} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
+                {imageUrls.map((url, i) => <a href={url} key={i} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
                     <Image
-                        src={imageUrl}
+                        src={url}
                         style={{ height: "100%" }}
                         styles={(theme) => ({
                             caption: {
@@ -35,9 +37,9 @@ const Map = () => {
                         caption="Click to expand."
                     />
 
-                </a>
+                </a>)}
             </Box>
-        </Box>
+        </Box>}
     </Layout>
 };
 export default Map;
